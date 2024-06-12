@@ -1114,15 +1114,7 @@ class AccountManagement implements AccountManagementInterface
      */
     public function isEmailAvailable($customerEmail, $websiteId = null)
     {
-        $guestLoginConfig = $this->scopeConfig->getValue(
-            self::GUEST_CHECKOUT_LOGIN_OPTION_SYS_CONFIG,
-            ScopeInterface::SCOPE_WEBSITE,
-            $websiteId
-        );
 
-        if (!$guestLoginConfig) {
-            return true;
-        }
 
         try {
             if ($websiteId === null) {
